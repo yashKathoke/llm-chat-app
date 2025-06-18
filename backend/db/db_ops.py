@@ -20,7 +20,7 @@ async def insert_chat(payload: Chat)-> str:
 async def get_complete_chat()-> list:
     result = await chat.find({}).to_list()
     chats = [serialize_chat(c) for c in result]
-    return chat
+    return chats
 
 async def get_chat(id: str)-> dict:
     if not ObjectId.is_valid(id):
