@@ -1,10 +1,17 @@
-import asyncio
-from db.db_ops import insert_chat, get_chats
 
-async def main():
-    chats = await get_chats()
-    for chat in chats:
-        print(chat)
+from fastapi import FastAPI
+from api.v1.chat_router import router as chat_router
 
-if __name__ == "__main__":
-    asyncio.run(main())
+
+
+
+
+app =FastAPI()
+
+app.include_router(chat_router)
+
+@app.get('/')
+async def handle():
+    return {
+        "msg": "this is / "
+    }
