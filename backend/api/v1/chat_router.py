@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Body, HTTPException
 from models.Schema import Question, Chat, Answer
 from db.db_ops import insert_chat, get_complete_chat, get_chat
 from typing import List
@@ -6,7 +6,7 @@ from typing import List
 router = APIRouter()
 
 @router.post('/api/chat', response_model=Answer)
-async def handle_question(question: Question):
+async def handle_question(question: Question = Body(...)):
     answer = f"This is a stubbed response to: {question.question}"  
     chat = Chat(question=question.question, answer=answer)  
     id = await insert_chat(chat.model_dump())
