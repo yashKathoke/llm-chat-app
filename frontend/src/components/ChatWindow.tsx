@@ -23,7 +23,7 @@ const ChatWindow = () => {
 
   const toBottomRef = useRef<HTMLDivElement>(null);
   
-  const { sendQuestion, loading, error } = useGetResponse();
+  const { sendQuestion, loading } = useGetResponse();
 
   const sendButtonHandle = async () => {
     if (!question.trim()) {

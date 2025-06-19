@@ -1,0 +1,26 @@
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+
+# Git and other version control
+.git/
+.gitignore
+
+# IDE/editor settings
+.vscode/
+*.swp
+*.swo
+
+
+
+# Environment/config files
+.env
+*.env
+
+

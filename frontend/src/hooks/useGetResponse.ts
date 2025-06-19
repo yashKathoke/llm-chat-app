@@ -10,19 +10,13 @@ const useGetResponse = () => {
     setError(null);
 
     try {
-
-        let payload = {
-            question:question
-        }
-        let response = await fetch(`${BACKEND_URL}/api/chat`, {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({ question }),
-});
-
-
+      let response = await fetch(`${BACKEND_URL}/api/chat`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ question }),
+      });
 
       let data = await response.json();
 
@@ -35,7 +29,7 @@ const useGetResponse = () => {
     }
   };
 
-  return {sendQuestion, loading, error}
+  return { sendQuestion, loading, error };
 };
 
 export default useGetResponse;
