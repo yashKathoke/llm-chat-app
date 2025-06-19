@@ -1,10 +1,10 @@
 type MessageProps = {
-    type: 'user' | 'bot';
+    type: 'question' | 'answer';
     content: string;
 };
 
 const Message = ({ type, content }: MessageProps) => {
-    const isUser = type === 'user';
+    const isUser = type === 'question';
 
     return (
         <div

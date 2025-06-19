@@ -1,19 +1,28 @@
 import { useState } from "react";
-import { BACKEND_URL } from "../../config.ts";
+import { BACKEND_URL } from "../../config";
 
 const useGetResponse = () => {
-  const [loading, setLoading] = useState<Boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  const sendQuestion = async (question: String) => {
+  const sendQuestion = async (question: string) => {
     setLoading(true);
     setError(null);
 
     try {
-      let response = await fetch(`${BACKEND_URL}/api/chat`, {
-        method: "POST",
-        body: JSON.stringify(question),
-      });
+
+        let payload = {
+            question:question
+        }
+        let response = await fetch(`${BACKEND_URL}/api/chat`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ question }),
+});
+
+
 
       let data = await response.json();
 
