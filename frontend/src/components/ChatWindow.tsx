@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import Input from "./Input";
+import Message from "./Message";
 
 type Message =  {
   id: number;
@@ -24,13 +25,13 @@ const ChatWindow = () => {
       <div className="bg-gradient-to-br from-slate-900 to-slate-700 backdrop-blur-sm  p-6 min-h-screen h-[80vh] flex justify-center items-center text-slate-300">
         <div className="w-1/2 min-h-2/3 max-h-4/5 bg-gradient-to-br from-slate-800 to-slate-900/20 backdrop-blur-sm inset-shadow-sm shadow-slate-600 p-6 rounded-xl flex flex-col">
           <div className="flex flex-col-reverse overflow-y-scroll  space-y-reverse space-y-2 max-h-4/5 flex-grow-[8]  scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-transparent ">
-            <p>Hello</p>
-            <div>
-              <p>hi there</p>
-            </div>
+     
 
             {messages.map((message) => (
-              <div key={message.id}>{message.text}</div>
+              <Message
+                content={message.text}
+                type="bot"
+              />
             ))}
           </div>
           {/* <div className="line w-0.2 border-1 my-5"></div> */}
