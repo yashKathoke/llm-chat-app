@@ -1,1 +1,7 @@
-export const BACKEND_URL = "http://127.0.0.1:8000"
+import dotenv from 'dotenv';
+dotenv.config();
+
+const  BACKEND_URL = process.env.BACKEND_URL || "http://localhost:8000";
+
+
+export {BACKEND_URL}
