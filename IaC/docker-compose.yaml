@@ -11,6 +11,7 @@ services:
     environment:
       - MONGO_URI=${MONGO_URI}
       - MONGO_DB_NAME=${MONGO_DB_NAME}
+      - FRONTEND_URL=${FRONTEND_URL}
     restart: always
 
 
