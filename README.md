@@ -148,7 +148,7 @@ http {
 
 ### 🔹 7. Run App on EC2
 
-* Before running make sure to add EC2 ip in `mongoDB Atlas` or backend will not work.
+* BEFORE running make sure to add EC2 ip in `mongoDB Atlas` or backend will not work.
 
 ```bash
 cd IaC/
