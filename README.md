@@ -69,7 +69,7 @@ docker-compose up --build
 
 * OS: Ubuntu 22.04 LTS
 * Type: t3.micro (free tier eligible)
-* Storage: 20 GiB (gp2)
+* Storage: 20 GiB (gp3)
 * Inbound rules:
 
   * **22**: SSH
